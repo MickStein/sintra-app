@@ -17,9 +17,18 @@ get '/lookyhere' do
   "Well well another page"
 end
 
-get '/cat' do
-  @random_name = ["Amigo", "Misty", "Almond"].sample
-  
+get '/random-cat' do
+  @name = ["Amigo", "Misty", "Almond"].sample
 
+  erb(:index)
+end
+
+get '/cat-form' do
+  erb :cat_form
+end
+
+post '/named-cat' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
