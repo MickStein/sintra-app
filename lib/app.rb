@@ -18,5 +18,8 @@ get '/lookyhere' do
 end
 
 get '/cat' do
+  @random_name = ["Amigo", "Misty", "Almond"].sample
+  
+
   erb(:index)
 end
